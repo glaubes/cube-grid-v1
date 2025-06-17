@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cube Grid in AR</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f9f9f9;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border: none;
+      background-color: #4285f4;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cube Grid in Augmented Reality</h1>
+  <button onclick="openAR()">In AR anzeigen</button>
+
+  <script>
+    function openAR() {
+      const modelUrl = 'https://glaubes.github.io/cube-grid-v1/cubegridv1.glb';
+      const intentUrl =
+        'intent://arvr.google.com/scene-viewer/1.0?file=' +
+        modelUrl +
+        '#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://glaubes.github.io/cube-grid-v1/;end;';
+      window.location.href = intentUrl;
+    }
+  </script>
+</body>
+</html>
